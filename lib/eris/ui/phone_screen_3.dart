@@ -64,7 +64,7 @@ class PhoneScreen3State extends State<PhoneScreen3> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      resizeToAvoidBottomInset: true,
+      resizeToAvoidBottomInset : true,
       body: Stack(
         children: [
           Image.asset(
@@ -87,136 +87,135 @@ class PhoneScreen3State extends State<PhoneScreen3> {
                     Orientation orientation = MediaQuery.of(context).orientation;
 
                     double containerHeight = isTablet
-                        ? (orientation == Orientation.portrait ? height * 0.42 : height * 0.5)
+                        ? (orientation == Orientation.portrait ? height * 0.42 : height * 0.478)
                         : (orientation == Orientation.portrait ? height * 0.6 : height * 1.1);
 
                     double containerWidth = isTablet
-                        ? (orientation == Orientation.portrait ? width * 0.5 : width * 0.34)
+                        ? (orientation == Orientation.portrait ? width * 0.5 : width * 0.30)
                         : (orientation == Orientation.portrait ? width * 0.8 : width * 0.6);
 
-                    return SingleChildScrollView(
-                      child: Container(
-                        margin: const EdgeInsets.symmetric(
-                            horizontal: 20, vertical: 14),
-                        padding: const EdgeInsets.all(20),
-                        width: containerWidth,
-                        height: containerHeight,
-                        child: Column(
-                          mainAxisSize: MainAxisSize.min,
-                          children: [
-                            const Text(
-                              '  Scientific\nInformation',
-                              style: TextStyle(
-                                fontSize: 24,
-                                fontWeight: FontWeight.w600,
-                                color: Color(0xff056EAB),
-                              ),
+
+                    return Container(
+                      margin: const EdgeInsets.symmetric(
+                          horizontal: 20, vertical: 10),
+                      padding: const EdgeInsets.all(20),
+                      width: containerWidth,
+                      height: 370,
+                      child: Column(
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          const Text(
+                            '  Scientific\nInformation',
+                            style: TextStyle(
+                              fontSize: 24,
+                              fontWeight: FontWeight.w600,
+                              color: Color(0xff056EAB),
                             ),
-                            SizedBox(
-                              height: height * 0.03,
+                          ),
+                          SizedBox(
+                            height: height * 0.03,
+                          ),
+                          Container(
+                            height: 46,
+                            decoration: BoxDecoration(
+                              color: const Color(0xffEBEBED),
+                              borderRadius: BorderRadius.circular(40),
                             ),
-                            Container(
-                              height: 46,
-                              decoration: BoxDecoration(
-                                color: const Color(0xffEBEBED),
-                                borderRadius: BorderRadius.circular(40),
-                              ),
-                              child: TextField(
-                                controller: _usernameController,
-                                textAlign: TextAlign.center,
-                                decoration: const InputDecoration(
-                                  border: InputBorder.none,
-                                  hintText: 'Username',
-                                  hintStyle: TextStyle(
-                                    color: Color(0xffCBCAD0),
-                                  ),
+                            child: TextField(
+                              controller: _usernameController,
+                              textAlign: TextAlign.center,
+                              decoration: const InputDecoration(
+                                border: InputBorder.none,
+                                hintText: 'Username',
+                                hintStyle: TextStyle(
+                                  color: Color(0xffCBCAD0),
                                 ),
                               ),
                             ),
-                            SizedBox(
-                              height: height * 0.03,
+                          ),
+                          SizedBox(
+                            height: height * 0.02,
+                          ),
+                          Container(
+                            height: 43,
+                            decoration: BoxDecoration(
+                              color: const Color(0xffEBEBED),
+                              borderRadius: BorderRadius.circular(40),
                             ),
-                            Container(
-                              height: 46,
-                              decoration: BoxDecoration(
-                                color: const Color(0xffEBEBED),
-                                borderRadius: BorderRadius.circular(40),
-                              ),
-                              child: TextField(
-                                controller: _passwordController,
-                                textAlign: TextAlign.center,
-                                obscureText: true,
-                                decoration: const InputDecoration(
-                                  border: InputBorder.none,
-                                  hintText: 'Password',
-                                  hintStyle: TextStyle(
-                                    color: Color(0xffCBCAD0),
-                                  ),
+                            child: TextField(
+                              controller: _passwordController,
+                              textAlign: TextAlign.center,
+                              obscureText: true,
+                              decoration: const InputDecoration(
+                                border: InputBorder.none,
+                                hintText: 'Password',
+                                hintStyle: TextStyle(
+                                  color: Color(0xffCBCAD0),
                                 ),
                               ),
                             ),
-                            SizedBox(
-                              height: height * 0.03,
-                            ),
-                            InkWell(
-                              splashColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () {
-                                setState(() {
-                                  isChecked = !isChecked;
-                                });
-                              },
-                              child: Row(
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Container(
-                                    margin: const EdgeInsets.all(2),
-                                    child: Image.asset(
-                                      isChecked
-                                          ? 'assets/images/check.jpeg'
-                                          : 'assets/images/unCheck.jpeg',
-                                      height: 25,
-                                      width: 26,
-                                    ),
+                          ),
+                          SizedBox(
+                            height: height * 0.03,
+                          ),
+                          InkWell(
+                            splashColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                            onTap: () {
+                              setState(() {
+                                isChecked = !isChecked;
+                              });
+                            },
+                            child: Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Container(
+                                  margin: const EdgeInsets.all(2),
+                                  child: Image.asset(
+                                    isChecked
+                                        ? 'assets/images/check.jpeg'
+                                        : 'assets/images/unCheck.jpeg',
+                                    height: 25,
+                                    width: 26,
                                   ),
-                                  const SizedBox(width: 10),
-                                  const Text(
-                                    'Remember Me',
+                                ),
+                                const SizedBox(width: 10),
+                                const Text(
+                                  'Remember Me',
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w500,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                          SizedBox(height: height * 0.03),
+                          SizedBox(
+                            width: double.infinity,
+                            child: SizedBox(
+                              height: 50,
+                              child: ElevatedButton(
+                                onPressed: _handleLogin,
+                                style: ButtonStyle(
+                                  backgroundColor: MaterialStateProperty.all(
+                                      const Color(0xffF48533)),
+                                  elevation: MaterialStateProperty.all(0),
+                                ),
+                                child: const Center(
+                                  child: Text(
+                                    'Login',
                                     style: TextStyle(
+                                      color: Colors.white,
                                       fontSize: 14,
-                                      fontWeight: FontWeight.w500,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            SizedBox(height: height * 0.03),
-                            SizedBox(
-                              width: double.infinity,
-                              child: SizedBox(
-                                height: 50,
-                                child: ElevatedButton(
-                                  onPressed: _handleLogin,
-                                  style: ButtonStyle(
-                                    backgroundColor: MaterialStateProperty.all(
-                                        const Color(0xffF48533)),
-                                    elevation: MaterialStateProperty.all(0),
-                                  ),
-                                  child: const Center(
-                                    child: Text(
-                                      'Login',
-                                      style: TextStyle(
-                                        color: Colors.white,
-                                        fontSize: 14,
-                                        fontWeight: FontWeight.w600,
-                                      ),
+                                      fontWeight: FontWeight.w600,
                                     ),
                                   ),
                                 ),
                               ),
                             ),
-                          ],
-                        ),
+                          ),
+                        ],
                       ),
                     );
                   },

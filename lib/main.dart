@@ -15,11 +15,9 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return  MaterialApp(
       title: 'Eris App',
-
-
-      //debugShowCheckedModeBanner: false,
-      //locale: DevicePreview.locale(context),
-      //builder: DevicePreview.appBuilder,
+      debugShowCheckedModeBanner: false,
+      locale: DevicePreview.locale(context),
+      builder: DevicePreview.appBuilder,
 
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
